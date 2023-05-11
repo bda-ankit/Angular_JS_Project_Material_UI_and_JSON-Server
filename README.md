@@ -5,9 +5,9 @@ Get United States Historical Corona data API and Integrated to the Material Tabl
 Made Dynamic Bar-Charts from Integrated API<br /><br />
 
 # Steps
-Install Node.js and install Angular JS from Node.js<br />
-Git clone <br />
-Open clone in Visual Studio Code<br />
-Run ng serve<br />
-After run the ng serve open given link into the browser<br />
-Run json-server --watch db.json<br />
+1. Install Node.js and install Angular JS from Node.js<br />
+2. Git clone <br />
+3. Open clone in Visual Studio Code<br />
+4. Run ng serve<br />
+5. After run the ng serve open given link into the browser<br />
+6. Run json-server --watch db.json<br />
