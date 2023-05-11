@@ -8,6 +8,6 @@ Made Dynamic Bar-Charts from Integrated API<br /><br />
 1. Install Node.js and install Angular JS from Node.js<br />
 2. Git clone <br />
 3. Open clone in Visual Studio Code<br />
-4. Run ng serve<br />
-5. After run the ng serve open given link into the browser<br />
-6. Run json-server --watch db.json<br />
+4. Run, ng serve in VS Code Terminal<br />
+5. After run the ng serve open given terminal link in the browser<br />
+6. Run, json-server --watch db.json in VS Code Terminal<br />
