@@ -1,0 +1,154 @@
+<app-coronarea>
+    
+</app-coronarea>
+
+<br>
+<br>
+<mat-divider></mat-divider>
+
+<br>
+<br>
+<div class="main-body">
+
+    <mat-form-field  class="filter">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+  
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+  
+        <!-- ID Column -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> date </th>
+            <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+          </ng-container>
+
+        <ng-container matColumnDef="states">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> States </th>
+          <td mat-cell *matCellDef="let row"> {{row.states}} </td>
+        </ng-container>
+  
+        <!-- Progress Column -->
+        <ng-container matColumnDef="positive">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Positive </th>
+          <td mat-cell *matCellDef="let row"> {{row.positive}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="negative">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Negative </th>
+          <td mat-cell *matCellDef="let row"> {{row.negative}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="pending">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Pending </th>
+          <td mat-cell *matCellDef="let row"> {{row.pending}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="hospitalizedCurrently">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Hospitalized Currently</th>
+          <td mat-cell *matCellDef="let row"> {{row.hospitalizedCurrently}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="hospitalizedCumulative">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Hospitalized Cumulative </th>
+          <td mat-cell *matCellDef="let row"> {{row.hospitalizedCumulative}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="inIcuCurrently">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> inIcuCurrently </th>
+          <td mat-cell *matCellDef="let row"> {{row.inIcuCurrently}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="inIcuCumulative">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> inIcuCumulative </th>
+          <td mat-cell *matCellDef="let row"> {{row.inIcuCumulative}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="onVentilatorCurrently">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> onVentilatorCurrently</th>
+          <td mat-cell *matCellDef="let row"> {{row.onVentilatorCurrently}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="onVentilatorCumulative">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> onVentilatorCumulative </th>
+            <td mat-cell *matCellDef="let row"> {{row.onVentilatorCumulative}}</td>
+          </ng-container>
+  
+        <ng-container matColumnDef="dateChecked">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> dateChecked </th>
+          <td mat-cell *matCellDef="let row"> {{row.dateChecked}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="death">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> death </th>
+            <td mat-cell *matCellDef="let row"> {{row.death}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="hospitalized">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> hospitalized </th>
+            <td mat-cell *matCellDef="let row"> {{row.hospitalized}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalTestResults">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> totalTestResults </th>
+            <td mat-cell *matCellDef="let row"> {{row.totalTestResults}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastModified">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> lastModified </th>
+            <td mat-cell *matCellDef="let row"> {{row.lastModified}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="recovered">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> recovered </th>
+            <td mat-cell *matCellDef="let row"> {{row.recovered}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> total </th>
+            <td mat-cell *matCellDef="let row"> {{row.total}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="posNeg">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> posNeg </th>
+            <td mat-cell *matCellDef="let row"> {{row.posNeg}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="deathIncrease">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> deathIncrease </th>
+            <td mat-cell *matCellDef="let row"> {{row.deathIncrease}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="hospitalizedIncrease">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> hospitalizedIncrease </th>
+            <td mat-cell *matCellDef="let row"> {{row.hospitalizedIncrease}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="negativeIncrease">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> negativeIncrease </th>
+            <td mat-cell *matCellDef="let row"> {{row.negativeIncrease}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="positiveIncrease">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> positiveIncrease </th>
+            <td mat-cell *matCellDef="let row"> {{row.positiveIncrease}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalTestResultsIncrease">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> totalTestResultsIncrease </th>
+            <td mat-cell *matCellDef="let row"> {{row.totalTestResultsIncrease}}</td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+    </div>
+      <mat-paginator class="filter" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    
+  </div>

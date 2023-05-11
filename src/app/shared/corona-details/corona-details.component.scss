@@ -1,0 +1,14 @@
+.table-container {
+    padding-top: 20px;
+    margin: 0 auto;
+    max-width: 1348px;
+    overflow-x: scroll;
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .filter{
+    width: 100%;
+    position: relative;
+  }
